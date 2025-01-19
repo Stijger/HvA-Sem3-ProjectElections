@@ -3,13 +3,14 @@ import {defineComponent} from 'vue'
 import axios from "axios";
 import Navbar from "@/components/general/NavBar.vue";
 import EditorInput from "@/components/profilepage/EditorInput.vue";
+import {BASE_URL} from "@/config";
 
 export default defineComponent({
   name: "ProfilePage",
   components: {EditorInput, Navbar},
   data() {
     return {
-      backend_url: "http://localhost:8080",
+      backend_url: BASE_URL,
       jwtToken: "",
       feedbackColour: "green",
       feedbackText: "",

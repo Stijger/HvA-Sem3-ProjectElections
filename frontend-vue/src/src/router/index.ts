@@ -1,4 +1,4 @@
-import Homepage from "@/components/homepage/homepage.vue";
+import  Homepage from "@/components/homepage/homepage.vue";
 import {createRouter, createWebHistory} from "vue-router";
 import QueryElectionResult from "@/components/queryelectionresult/QueryElectionResult.vue";
 import SignUpPage from "@/components/signuppage/SignUpPage.vue";

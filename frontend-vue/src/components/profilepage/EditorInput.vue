@@ -1,13 +1,14 @@
 <script lang="ts">
 import {defineComponent} from 'vue'
 import axios from "axios";
+import {BASE_URL} from "@/config";
 
 export default defineComponent({
   name: "EditorInput",
   emits: [ "post-change" ],
   data() {
     return {
-      backend_url: "http://localhost:8080",
+      backend_url: BASE_URL,
       is_editing: 1,
       boxContent: "",
       lastChange: "",

@@ -37,7 +37,7 @@
         return;
       }
       // Post the message to the backend
-      const response = await axios.post('http://localhost:8080/api/posts', {
+      const response = await axios.post('/api/posts', {
         title: newTitle.value,
         body: newMessage.value },
       {

@@ -12,7 +12,7 @@ const posts = ref<Array<{id: number, title: string, body: string, dateTime: stri
  */
 const fetchPosts = async () => {
   try {
-    const response = await axios.get("http://localhost:8080/api/posts");
+    const response = await axios.get("/api/posts");
     posts.value = response.data;
   } catch (error) {
     console.error("Error while fetching posts", error || error.response);

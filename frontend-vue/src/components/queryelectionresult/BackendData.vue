@@ -72,9 +72,9 @@ export default {
   mounted() {
     axios
         .all([
-          axios.get('http://localhost:8080/votesperparty/votesperregion?regionCode=L528'),
-          axios.get('http://localhost:8080/party/all'),
-          axios.get('http://localhost:8080/region/province')
+          axios.get('/votesperparty/votesperregion?regionCode=L528'),
+          axios.get('/party/all'),
+          axios.get('/region/province')
         ])
         .then(responses => {
           const dataResponse = responses[0].data;
@@ -104,7 +104,7 @@ export default {
      * Applies selected filters and updates the chart data based on the user selection.
      */
     applyFilters() {
-      const url = 'http://localhost:8080/votesperparty/partyvotesperregion';
+      const url = 'http://stijngerkema.nl:8080/votesperparty/partyvotesperregion';
 
       const params = {
         ...(this.selectedParty && { partyId: parseInt(this.selectedParty) }),
@@ -137,7 +137,7 @@ export default {
       }
 
       axios
-          .get(`http://localhost:8080/votesperparty/allvotesperregion/${this.selectedCity}`)
+          .get(`http://stijngerkema.nl:8080/votesperparty/allvotesperregion/${this.selectedCity}`)
           .then(response => {
             const fetchedCities = response.data.map(item => ({
               ...item,
@@ -158,7 +158,7 @@ export default {
         return;
       }
       axios
-          .get(`http://localhost:8080/region/greatParent/${this.selectedRegion}`)
+          .get(`http://stijngerkema.nl:8080/region/greatParent/${this.selectedRegion}`)
           .then(response => {
             this.cities = response.data;
             console.log(this.selectedRegion);

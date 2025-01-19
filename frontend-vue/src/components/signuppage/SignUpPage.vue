@@ -68,7 +68,7 @@ export default defineComponent({
   },
   data() {
     return {
-      backend_url: "http://localhost:8080",
+      backend_url: "http://stijngerkema.nl:8080",
 
       loginFields: [
         {disp: "Username", form: "username", hide: false},
